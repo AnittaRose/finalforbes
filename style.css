@@ -101,3 +101,82 @@
 .trends {
     font-size: 12px;
 }
+
+.main-section{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.camera{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+   
+}
+.images-sub{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.txt{
+    font-size: 12px;
+    padding-left: 10px;
+}
+.start{
+    font-size: 24px;
+}
+.by{
+    font-size: 10px;
+}
+.million{
+    font-size: 16px;
+}
+.good{
+    font-size: 12px;
+}
+.time{
+    padding-bottom: 100px;
+}
+.business{
+    font-size: 12px;
+    color: rgb(226,146,38);
+}
+.planning{
+    font-size: 16px;
+}
+.muthu,.varma{
+    font-size: 12px;
+}
+.how,.shape{
+    font-size: 14px;
+}
+.issue{
+    font-size: 16px;
+}
+.now{
+    font-size: 18px;
+    background-color: rgb(244,104,69);
+    padding: 3px;
+ 
+}
+.new-1{
+    background-color:rgb(2,19,91);
+    font-size: 12px;
+    padding: 5px;
+    
+
+}
+.now-1{
+    text-align: center;
+}
+.divya{
+    font-size: 12px;
+}
+.in{
+    width: 35px;
+    height: 35px;
+}
+.common{
+    display: flex;
+    justify-content:space-between;
+}
