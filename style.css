@@ -180,3 +180,25 @@
     display: flex;
     justify-content:space-between;
 }
+.footer-section{
+    background-color: rgb(237,237,237);
+}
+.Latest{
+    font-size:30px;
+}
+@media only screen and (max-width: 786px) {
+    .hide{
+        display: none;
+    }
+    .image-icon{
+        display: contents;
+      }
+}
+@media only screen and (max-width: 600px) {
+    .image-icon{
+      display: block;
+    }
+}
+.image-icon{
+    display: none;
+}

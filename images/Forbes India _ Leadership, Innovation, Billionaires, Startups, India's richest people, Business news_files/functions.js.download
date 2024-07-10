@@ -1,0 +1,160 @@
+function trim(str){
+    var s = str.replace(/^(\s)*/, '');
+    s = s.replace(/(\s)*$/, '');
+    return s;
+}
+
+function isValidEmail(str) {
+    emailRe = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.(\w{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$/
+    if (!emailRe.test(str))	
+            return false;	
+    else
+            return true;				
+}
+function validateSubscriptionHome(){
+    var frm = document.formSubsribeHome;
+
+    var mobile = trim(document.getElementById("home_mobile").value);
+    var email = trim(document.getElementById("home_email").value);
+    var source = 'FI Home';
+    if(mobile == ""){
+            alert("Please enter your Mobile No.");
+            document.getElementById("home_mobile").value="";
+            document.getElementById("home_mobile").focus();
+            return false;
+    }else if(mobile != ""){
+                    if(isNaN(mobile)){
+                            alert("Please enter valid Mobile No.");
+                            document.getElementById("home_mobile").value="";
+                            document.getElementById("home_mobile").focus();	
+                            return false;
+                    }
+                    if(mobile.substr(0,1) != "9" && mobile.substr(0,1) != "8" && mobile.substr(0,1) != "7"){
+                             alert("Mobile number should start with 9 or 8 or 7");
+                             document.getElementById("home_mobile").value="";
+                             document.getElementById("home_mobile").focus();
+                             return false;
+                    }
+                    if(mobile.length != 10){
+                            alert("Mobile number must have 10 digits");
+                            document.getElementById("home_mobile").value="";
+                            document.getElementById("home_mobile").focus();
+                        return false;
+                    }
+    }//else
+	
+    if(email == ""){
+            alert("Please enter your Email address.");	
+            document.getElementById("home_email").value="";
+            document.getElementById("home_email").focus();
+            return false;
+    }else if(email != ""){
+                    emailvalid=isValidEmail(email);	
+                    if(emailvalid != true){
+                            alert("Please enter valid Email address.");
+                            document.getElementById("home_email").value="";
+                            document.getElementById("home_email").focus();	
+                            return false;
+                    }
+    }//else
+		
+	 var postData = {};
+		postData['mobile'] = mobile; 
+		postData['source'] = source;
+        postData['email'] = email; 
+		postData['source'] = source; 		
+		postData['instatoken'] = '';
+var sorted_keys = Object.keys(postData).sort();
+        var concatenated_str = "";
+        for (var ctr = 0; ctr < sorted_keys.length; ctr++) {
+            if (sorted_keys[ctr] == "instatoken") {
+                continue;
+            }
+            concatenated_str += postData[sorted_keys[ctr]].toString();
+        }
+        var instatoken = calcMD5(concatenated_str);
+      // return validateSubForm();
+        //alert(Object.keys(postData));
+       // alert(postData);
+      // alert(concatenated_str);
+      // alert(token);
+
+    $.post("https://www.forbesindia.com/insta-subscribe2db.php", {mobile:mobile,email:email,source:source,instatoken:instatoken},
+    function(data){
+            var msg = "<div style='background-color:#F1F1F1; font-size:13px; padding:10px;'><b>Thank you for your interest in Forbes India.</b><br><br>Our customer care agent will get in touch with you shortly to take your subscription request forward.<br></div>";
+            $('#submsg').html(msg);
+    });
+}
+
+function validateSubscription(){
+    var frm = document.formSubsribe;
+
+    var mobile = trim(document.getElementById("mobile").value);
+    var email = trim(document.getElementById("email").value);
+    var source = 'FI Other';
+    if(mobile == ""){
+            alert("Please enter your Mobile No.");
+            document.getElementById("mobile").value="";
+            document.getElementById("mobile").focus();
+            return false;
+    }else if(mobile != ""){
+                    if(isNaN(mobile)){
+                            alert("Please enter valid Mobile No.");
+                            document.getElementById("mobile").value="";
+                            document.getElementById("mobile").focus();	
+                            return false;
+                    }
+                    if(mobile.substr(0,1) != "9" && mobile.substr(0,1) != "8" && mobile.substr(0,1) != "7"){
+                             alert("Mobile number should start with 9 or 8 or 7");
+                             document.getElementById("mobile").value="";
+                             document.getElementById("mobile").focus();
+                             return false;
+                    }
+                    if(mobile.length != 10){
+                            alert("Mobile number must have 10 digits");
+                            document.getElementById("mobile").value="";
+                            document.getElementById("mobile").focus();
+                        return false;
+                    }
+    }//else
+	
+    if(email == ""){
+            alert("Please enter your Email address.");	
+            document.getElementById("email").value="";
+            document.getElementById("email").focus();
+            return false;
+    }else if(email != ""){
+                    emailvalid=isValidEmail(email);	
+                    if(emailvalid != true){
+                            alert("Please enter valid Email address.");
+                            document.getElementById("email").value="";
+                            document.getElementById("email").focus();	
+                            return false;
+                    }
+    }
+	var postData = {};
+		postData['mobile'] = mobile; 
+		postData['source'] = source;
+        postData['email'] = email; 
+		postData['source'] = source; 		
+		postData['instatoken'] = '';
+var sorted_keys = Object.keys(postData).sort();
+        var concatenated_str = "";
+        for (var ctr = 0; ctr < sorted_keys.length; ctr++) {
+            if (sorted_keys[ctr] == "instatoken") {
+                continue;
+            }
+            concatenated_str += postData[sorted_keys[ctr]].toString();
+        }
+        var instatoken = calcMD5(concatenated_str);
+     // alert(Object.keys(postData));
+      //  alert(postData);
+       //alert(concatenated_str);
+      // alert(token);
+
+     $.post("https://www.forbesindia.com/insta-subscribe2db.php", {mobile:mobile,email:email,source:source,instatoken:instatoken},
+    function(data){
+            var msg = "<div style='background-color:#FFFFFF; font-size:13px; padding:10px;'><b>Thank you for your interest in Forbes India.</b><br><br>Our customer care agent will get in touch with you shortly to take your subscription request forward.<br></div>";
+            $('#submsg').html(msg);
+    });
+}

@@ -1,0 +1,66 @@
+/* Budget Banner CSS */
+#budget-banner{background:url('../images/bg-budget-banner.jpg') no-repeat center center;width:100%;height:93px;margin-bottom:20px;display:flex;align-items:center;background-size:contain;}
+#budget-banner .forbesflex{width:100%;align-items:center;}
+.lf-col{padding-left:170px;color:#fff;font-weight:bold;font-family:'MerriweatherBold';font-size:36px}
+.lf-col span{color:#fff}
+.lf-col em{color:#fff}
+.rt-col{display:flex;margin-left:auto;align-items:center;}
+.duration{padding:0 20px 0 20px;}
+#countdown{width:100%}
+.duration .timebox{width:60px;margin:0 auto;text-align:center;}
+.duration .bb-flex{display:flex;justify-content:space-between;align-items:center;}
+.duration .bb-flex .cd-top{font:700 18px/24px 'MerriweatherRegular';color:#fff;background:#2e4a6b;margin:0 5px 4px;border-radius:5px;padding:6px 0}
+.duration .bb-flex .cd-bottom{color:#fff;font:500 12px/18px 'MerriweatherRegular';text-transform:uppercase;}
+/* Budget Banner CSS */
+
+/* Budget Quiz CSS */
+.budget-quiz{background:#000;border-radius:6px;width:300px;padding:20px 15px 15px;position:relative;margin-bottom:30px}
+/*.budget-quiz::before{content:'';background:url('../images/question-mark.png') no-repeat 0 0;width:92px;height:149px;position:absolute;left:-45px;top:0;}*/
+.widget-ttl{color:#fff;font-weight:bold;font-size:30px;font-family:'MerriweatherBold';text-align:center;padding-bottom:25px;padding-left:10px}
+.budget-quiz p{color:#fff;font:400 16px/20px 'MerriweatherRegular';padding-left:50px;padding-bottom:10px}
+.powered-div{width:157px;text-align:right;display:flex;margin-left:auto;flex-direction:column;}
+.powered-div p{font-size:12px;line-height:30px;font-family:'MerriweatherRegular';padding-left:0;padding-bottom:0;text-align:center;}
+.powered-div img{max-width:157px}
+.noflexgrow{flex-grow:inherit;margin-left:auto}
+/* Budget Quiz CSS */
+
+/* Budget Poll CSS */
+.budget-poll .forbesflex{display:flex;align-items:center;margin-bottom:20px}
+.poll-ttl{color:#000;font-family:'MerriweatherRegular';font-weight:bold;font-size:28px}
+.budget-poll .powered-div p{text-align:left;line-height:20px}
+.budget-poll .poll-img{width:100%}
+.budget-poll .powered-div{width:auto}
+/*.poll-cont{box-shadow:0 1px 10px #ccc;margin-top:15px;padding:18px 12px 28px;border-radius:6px;margin-bottom:20px}
+.poll-cont .ques{font-family:'MerriweatherBold';font-size:16px;color:#000;line-height:22px;margin-bottom:15px}
+.poll-cont .field{border:1px solid #e0e0e0;padding:20px 15px;margin-bottom:12px}
+.poll-cont .field [type=radio]:checked+label:before, .poll-cont .field [type=radio]:not(:checked)+label:before{border:1px solid #000}
+.poll-cont .field [type=radio]:checked+label:after, .poll-cont .field [type=radio]:not(:checked)+label:after{top:4px;left:4px;}
+.poll-cont .field [type=radio]:checked+label, .poll-cont .field [type=radio]:not(:checked)+label{color:#000;line-height:18px;font-family:'MerriweatherRegular'}
+.btn-vote{background:#0095ff;color:#fff;font-size:18px;font-family:'MerriweatherRegular';display:block;text-align:center;padding:20px 0}
+*//* Budget Poll CSS */
+
+@media screen and (min-width:1024px) and (max-width:1200px){
+	.lf-col{font-size:25px;padding-left:105px}
+}
+@media screen and (max-width:1023px){
+	#budget-banner{background:url('../images/bg-budget-banner-mb.jpg') #395d86 no-repeat 0 0;width:100%;background-size:contain;}
+	.lenovo-logo{display:none}
+	.lf-col{display:flex;flex-direction:column;font-size:18px;padding-left:0;text-align:right;}
+	.lf-col img{max-width:98px;display:flex;margin-left:auto}
+	.lf-col em{font-style:normal;text-align:left;color:#fff;padding-left:45px;font-size:12px;line-height:14px}
+	#budget-banner .forbesflex{flex-wrap:inherit;align-items:flex-end;}
+	.duration{padding:0 0px 0 20px}
+	.duration .timebox{width:36px}
+	.duration .bb-flex .cd-top{font:700 14px/20px 'MerriweatherRegular';margin:0 2px 4px;}
+	.duration .bb-flex .cd-bottom{font:500 10px/12px 'MerriweatherRegular';}
+	.budget-quiz{margin:0 auto 30px;}
+	.budget-poll .poll-img{max-width:340px;margin:0 auto;display:block;}
+	.budget-poll .forbesflex{max-width:340px;margin:0 auto 20px;}
+}
+@media screen and (max-width:480px){
+	.budget-poll{max-width:340px;margin:0 auto;}
+	/*.budget-quiz{margin:0 auto 30px 40px;}*/
+	
+}
+
+
